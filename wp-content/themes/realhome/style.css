@@ -1,0 +1,379 @@
+/*
+Theme Name: RealHome
+Description: Theme RealHome de Julia Vader
+Author: Julia Vader
+Author URI: https://www.realhome.com
+Version: 0.1.0
+*/
+
+/*Font */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a{
+    font-family: 'Raleway', sans-serif;
+}
+
+p, .city, #menu-menu-principal li a,
+#menu-menu-principal-1 li a,
+#menu-contact li a,
+.about-agent-work{
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+}
+
+
+/*---------------- MENU*/
+.principal-menu{
+    width: 50%;
+}
+#menu-menu-principal{
+    display: flex;
+    justify-content: space-between;
+}
+#menu-menu-principal li, #menu-menu-principal-1{
+    list-style: none;
+}
+#menu-menu-principal-1{
+    padding: 0px;
+}
+#menu-menu-principal li a{
+    color: #000;
+}
+#menu-menu-principal-1 li a {
+    color: #FFFFFF;
+
+}
+
+/*navigation RS*/
+
+#menu-menu-reseaux-sociaux, #menu-menu-reseaux-sociaux-1{
+    display: flex;
+}
+#menu-menu-reseaux-sociaux li, #menu-menu-reseaux-sociaux-1 li {
+    border: 2px solid lightgrey;
+    border-radius: 100%;
+    font-size: 20px;
+    height: 35px;
+    list-style: none;
+    margin-right: 12px; ;
+    padding-top: 3%;
+    width: 35px;
+    text-align: center;
+}
+#menu-menu-reseaux-sociaux-1 li{
+    background: #FFFFFF;
+    border: none;
+    padding-top: 8px;
+}
+#menu-menu-reseaux-sociaux li:hover,  #menu-menu-reseaux-sociaux-1 li:hover {
+    border: 2px solid black;
+}
+#menu-menu-reseaux-sociaux li.menu-item a, #menu-menu-reseaux-sociaux-1 li.menu-item a {
+    display: none;
+}
+#menu-menu-reseaux-sociaux-1{
+    padding: 0px;
+    padding-top: 20px;
+}
+
+/*menu Contact*/
+
+#menu-contact{
+    padding: 0px;
+    list-style: none;
+}
+#menu-contact li a {
+    color: #FFF;
+}
+#menu-contact li a:hover {
+    text-decoration: none;
+}
+#menu-contact li:first-child {
+    padding-bottom: 5px;
+}
+#menu-contact li:last-child {
+    padding-top: 5px;
+}
+#menu-contact li:last-child a{
+    color: #e2574c;
+    padding-top: 10px;
+}
+#menu-contact li:last-child a:hover{
+    text-decoration: underline;
+}
+
+/*=================
+    RESPONSIVE MENU
+==================*/
+
+@media (max-width: 992px) {
+    /*menu RS */
+    #menu-menu-reseaux-sociaux{
+        padding: 0px;
+        padding-top: 12px;
+    }
+    /*menu principal */
+    .principal-menu{
+        width: 60%;
+    }
+    #menu-menu-principal{
+        padding: 0px;
+        padding-top: 12px;
+    }
+
+
+}
+@media (max-width: 768px) {
+    /*menu RS */
+    #menu-menu-reseaux-sociaux{
+        padding: 0px;
+    }
+    #menu-menu-reseaux-sociaux-1{
+        display: block;
+    }
+    /*menu principal */
+    .principal-menu{
+        width: 100%;
+    }
+    #menu-menu-principal{
+        margin: 12px 0px;
+        text-align: end;
+    }
+}
+
+/*---------------- HOMEPAGE */
+
+/*home featured image */
+
+.home-featured-image{
+    background-size: cover !important;
+    background-position: center !important;
+    height: 545px;
+}
+.home-featured-image h2{
+    font-weight: bold;
+    font-size: 48px;
+}
+.mt-6{
+    margin-top: 6rem;
+}
+
+/*article header*/
+
+.article_header h2{
+    font-weight: bold;
+    width: 330px;
+}
+.article_header::after{
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #000;
+    right: 50px;
+    bottom: 25px;
+    position: absolute;
+}
+
+/*card spécification*/
+
+.card{
+    background: none;
+    border: none;
+}
+.specs{
+    background: #fbfbfb;
+}
+
+/*propriété*/
+
+.property{
+    background: #f6f6f6;
+    position: relative;
+}
+.property-title::after{
+    background: #e2574c;
+    content: '';
+    height: 3px;
+    left: 48%;
+    position: absolute;
+    top: 10%;
+    width: 70px;
+}
+.card-title{
+    font-size: 22px;
+    font-weight: bold;
+}
+.card-img-top{
+    height: 300px;
+}
+.card-img-top img{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+.options{
+    border-top: 1px solid #e6e6e6;
+    display: flex;
+    padding: 0px;
+}
+.options li{
+    border: none;
+    font-size: 13px;
+    padding: 0px;
+    padding: 14px 10px;
+    width: 100%;
+}
+.btn-property{
+    background: #e2574c;
+    display: block;
+    margin: 0 auto;
+    width: 15%;
+}
+
+/*agents*/
+
+
+.agent-img img{
+    height: 70%;
+    object-fit: contain;
+    position: relative;
+}
+.agent-title::after{
+    background: #e2574c;
+    content: '';
+    height: 3px;
+    left: 15px;
+    position: absolute;
+    top: 30%;
+    width: 70px;
+}
+
+/*patenaires */
+
+.partners-title{
+    font-size: 28px;
+
+}
+.partners-img img{
+    width: 50%;
+}
+
+/*Footer*/
+
+.widget .widget-title{
+    color: #FFF;
+}
+
+/*=================
+    responsive HOME PAGE
+==================*/
+
+@media (max-width: 992px) {
+    /*header*/
+
+    .custom-logo-link{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /*featured image*/
+
+    .home-featured-image h2{
+        font-size: 28px;
+        padding-top: 3%;
+    }
+
+    /*agency*/
+
+    .article_header::after{
+        right: 25px;
+    }
+    /*property*/
+    .property-title::after{
+        top: 6.5%;
+    }
+    .property .card{
+        width: 18rem !important;
+    }
+    .btn-property{
+        width: 25%;
+    }
+}
+
+@media (max-width: 768px) {
+    /*header*/
+    .rs-menu{
+        width: 50%;
+        margin: 0 auto;
+        padding-top: 12px;
+    }
+    #menu-menu-reseaux-sociaux li{
+        margin: 0 auto;
+        padding-top: 5px;
+    }
+    /*agency*/
+    .agency .row{
+        display: block;
+    }
+    /*property*/
+    .property-title::after{
+        top: 3.5%;
+    }
+    .property .card{
+        width: 100% !important;
+    }
+    /*agent*/
+    .agent-title::after{
+        top: 36%;
+    }
+    .agent-img img{
+        width: 100%;
+    }
+    /*partners*/
+    .partners-img img{
+        width: 100%;
+    }
+}
+
+/*---------------- ABOUT */
+
+.title-about span{
+    font-weight: bold;
+}
+
+/*agents*/
+.agents .card{
+    border: 1px solid #e6e6e6;
+}
+
+
+/*=================
+    responsive ABOUT PAGE
+==================*/
+
+@media (max-width: 992px){
+    .about .col{
+        padding: 0px;
+    }
+
+    .about-image{
+        height: 250px;
+
+
+    }
+    .about-image img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+/*---------------- Actualités */
+
