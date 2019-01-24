@@ -10,7 +10,7 @@
 </head>
 <body ">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between pt-3">
 <div class="container">
         <?php
         if( function_exists( 'the_custom_logo' ) ) {
@@ -30,5 +30,7 @@
 
         <?php wp_nav_menu( array( 'theme_location' => 'RS-menu' ) ); ?>
     </div>
+
+    <button id="myBtn" class ="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 </div>
 </nav>

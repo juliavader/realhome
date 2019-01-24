@@ -5,7 +5,9 @@ Author: Julia Vader
 Author URI: https://www.realhome.com
 Version: 0.1.0
 */
-
+/*grid*/
+.grid-item { width: 25%; }
+.grid-item--width2 { width: 50%; }
 /*Font */
 
 h1,
@@ -15,14 +17,22 @@ h4,
 h5,
 h6,
 span,
-a{
+a,
+.rpwe-title,
+.comment .author-name,
+input,
+textarea, .contact-sidebar-2 form label{
     font-family: 'Raleway', sans-serif;
 }
 
 p, .city, #menu-menu-principal li a,
 #menu-menu-principal-1 li a,
 #menu-contact li a,
-.about-agent-work{
+.about-agent-work,
+.rpwe-summary,
+.spec-single,
+.menu-contact-container li:nth-child(2):before,
+.menu-contact-container li:nth-child(3):before{
     font-family: 'Playfair Display', serif;
     font-size: 14px;
 }
@@ -147,6 +157,10 @@ p, .city, #menu-menu-principal li a,
     }
 }
 
+
+
+
+
 /*---------------- HOMEPAGE */
 
 /*home featured image */
@@ -162,6 +176,28 @@ p, .city, #menu-menu-principal li a,
 }
 .mt-6{
     margin-top: 6rem;
+}
+/*top button */
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #e2574c;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    transition: all .5s ease-in-out;
+}
+
+#myBtn:hover {
+    background-color: #555;
 }
 
 /*article header*/
@@ -196,13 +232,21 @@ p, .city, #menu-menu-principal li a,
     background: #f6f6f6;
     position: relative;
 }
+.property_link{
+    color: #000;
+}
+.property_link:hover{
+   text-decoration: none;
+    color: #e2574c;
+}
+
 .property-title::after{
     background: #e2574c;
     content: '';
     height: 3px;
     left: 48%;
     position: absolute;
-    top: 10%;
+    top: 9%;
     width: 70px;
 }
 .card-title{
@@ -216,6 +260,7 @@ p, .city, #menu-menu-principal li a,
     height: 100%;
     object-fit: cover;
     width: 100%;
+
 }
 .options{
     border-top: 1px solid #e6e6e6;
@@ -240,8 +285,11 @@ p, .city, #menu-menu-principal li a,
 
 
 .agent-img img{
+    width: 100%;
     height: 70%;
-    object-fit: contain;
+    padding-top: 50px;
+    object-fit: cover;
+
     position: relative;
 }
 .agent-title::after{
@@ -250,7 +298,7 @@ p, .city, #menu-menu-principal li a,
     height: 3px;
     left: 15px;
     position: absolute;
-    top: 30%;
+    top: 25%;
     width: 70px;
 }
 
@@ -265,15 +313,52 @@ p, .city, #menu-menu-principal li a,
 }
 
 /*Footer*/
+#media_image-2{
+    text-align: left !important;
+}
 
 .widget .widget-title{
     color: #FFF;
 }
 
+.footer-sidebar2 .menu-item{
+    padding: 3px;
+}
+.footer-sidebar2 #menu-menu-principal-1 li a:hover{
+    color: #e2574c;
+    text-decoration: none;
+}
+.footer-sidebar3 .menu-contact-container li:nth-child(4){
+    display: block;
+}
+
+.footer-sidebar3 .menu-contact-container li:nth-child(2):before,
+.footer-sidebar3 .menu-contact-container li:nth-child(3):before{
+    color: #fff;
+}
+.footer-sidebar3 .menu-contact-container li:nth-child(2){
+    padding-top: 10px;
+}
+.footer-sidebar3 .menu-contact-container li:nth-child(3){
+    padding: 0px;
+}
+.footer-sidebar3 .menu-contact-container li:nth-child(4){
+    padding-bottom: 10px;
+}
 /*=================
     responsive HOME PAGE
 ==================*/
+@media (max-width: 1200px){
+    /*agent*/
+    .agent-title::after{
+        top: 30%;
+    }
+    /*footer */
 
+    #media_image-2{
+        text-align: left !important;
+    }
+}
 @media (max-width: 992px) {
     /*header*/
 
@@ -305,9 +390,19 @@ p, .city, #menu-menu-principal li a,
     .btn-property{
         width: 25%;
     }
+
+    /*agent title*/
+    .agent-title::after{
+        top: 27%;
+    }
+    /*footer */
+
+    #media_image-2{
+        text-align: center !important;
+    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 578px) {
     /*header*/
     .rs-menu{
         width: 50%;
@@ -331,7 +426,7 @@ p, .city, #menu-menu-principal li a,
     }
     /*agent*/
     .agent-title::after{
-        top: 36%;
+        top: 27%;
     }
     .agent-img img{
         width: 100%;
@@ -352,6 +447,7 @@ p, .city, #menu-menu-principal li a,
 .agents .card{
     border: 1px solid #e6e6e6;
 }
+
 
 
 /*=================
@@ -376,4 +472,270 @@ p, .city, #menu-menu-principal li a,
 }
 
 /*---------------- Actualités */
+
+/*card actualité*/
+.actu .card{
+    border-bottom: 1px solid #e6e6e6;
+}
+.actu .card:first-child{
+   margin-top: 0px!important;
+}
+.actu img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.btn-actu{
+    background: #e2574c;
+}
+
+/*sidebar actualité*/
+.actu-sidebar1 .widget .widget-title{
+    color: #000;
+    font-size: 20px;
+}
+
+.actu-sidebar1 ul {
+    list-style: none;
+    padding: 0px;
+}
+.actu-sidebar1 ul li a{
+    color: #797979;
+}
+
+.actu-sidebar1 .rpwe-block li{
+    border-bottom: none;
+}
+
+.rpwe-title{
+    font-size: 15px !important;
+    color: #000;
+}
+
+.post-recent .rpwe-li{
+    display: flex;
+    flex-wrap: wrap;
+}
+.post-recent .rpwe-summary{
+    order: 2;
+    padding: 10px 0px;
+}
+.post-recent .rpwe-time{
+    order: 3;
+}
+
+
+/*---------------- SINGLE.php */
+
+/*commentaires*/
+.comment-img img{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.reply-title h5{
+    font-size: 14px;
+
+}
+
+#reply-title, #reply-title h5{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.comment-form textarea, .comment-body input{
+    padding: 10px;
+    border: 1px solid #e6e6e6 !important;
+    width: 100%;
+    color: #e6e6e6;
+}
+
+#respond{
+    padding-top: 12px;
+}
+
+.form-submit input{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    background: #e2574c;
+    font-size: 12px;
+}
+
+.comment-form{
+    display: flex;
+    flex-wrap: wrap;
+}
+.comment-notes{
+    display: none;
+}
+.comment-body{
+    order: 2;
+    justify-content: space-between;
+    width: 100%;
+}
+.comment-form-comment{
+    order: 3;
+    width: 100%;
+}
+.form-submit{
+    order: 4 ;
+    width: 100%;
+}
+.comment-body p{
+    margin: 0px;
+}
+
+
+/*property page*/
+.navbar-property li{
+    list-style: none;
+}
+.navbar-property li a {
+    color: #000;
+}
+
+.navbar-property li a:hover {
+    text-decoration: none;
+    color: #000;
+    border-bottom: 2px solid #e2574c;
+}
+
+/*property single*/
+
+.card-property-single{
+    width: 13rem;
+}
+.card-property-single img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-img-top-single{
+    height: 155px;
+}
+.title-property-single{
+    font-size: 18px;
+}
+.single-price{
+    font-size: 30px;
+    font-family: Raleway;
+    color: #e2574c;
+}
+
+.img-single-propriete  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*contact page */
+
+/*open street map */
+.acf-map {
+    width: 100%;
+    height: 400px;
+    border: #ccc solid 1px;
+    margin: 20px 0;
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+    max-width: inherit !important;
+}
+
+i.fas.fa-map-pin{
+    top: 40% !important;
+}
+
+#leaflet-map-1{
+    height: 300px !important;
+}
+
+/*sidebar */
+
+.contact-sidebar-1 .widget .widget-title,
+.contact-sidebar-1 #menu-contact li a,
+.contact-sidebar-2 .widget .widget-title{
+    color : #000;
+}
+.contact-sidebar-1 .widget .widget-title,.contact-sidebar-2 .widget .widget-title{
+    font-weight: bold;
+
+}
+.contact-sidebar-1 #menu-contact li:first-child{
+    font-weight: bold;
+    font-size: 16px;
+}
+.menu-contact-container li:nth-child(2){
+    padding-top:  20px;
+    font-weight: bold;
+}
+.menu-contact-container li:nth-child(2):before{
+    content: 'Téléphone : ';
+    font-weight: normal;
+
+}
+.menu-contact-container li:nth-child(3):before{
+    content: 'FAX : ';
+    font-weight: normal;
+}
+.menu-contact-container li:nth-child(3){
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+.menu-contact-container li:nth-child(4){
+    display: none;
+}
+.contact-sidebar-1 #menu-contact li:last-child:before{
+    content: 'Email : ';
+    color: #000;
+}
+.contact-sidebar-1 #menu-contact li:last-child a{
+    color:  #e2574c !important;
+}
+
+
+/*contact side bar */
+.contact-sidebar-2 form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.contact-sidebar-2 form textarea,
+.contact-sidebar-2 form input{
+    border: 1px solid #e6e6e6;
+    padding: 10px;
+    width: 100%;
+}
+.contact-sidebar-2 form p:nth-child(3),
+.contact-sidebar-2 form p:nth-child(2) {
+    width: 45%;
+    height: 60px;
+}
+
+.contact-sidebar-2 form p:nth-child(4){
+    width: 100%;
+}
+
+.contact-sidebar-2 form p:nth-child(5) input{
+    color: #fff;
+    text-align: center;
+    border: 0px; background: #e2574c;
+    border-radius: 5px;
+    width: 70px;
+
+}
+.contact-sidebar-2 span.wpcf7-form-control-wrap,
+.contact-sidebar-2 label,
+.contact-sidebar-2 textarea{
+    width: 100%;
+    height: 100px;
+}
+.contact-sidebar-2 label{
+    color: #e6e6e6;
+}
 

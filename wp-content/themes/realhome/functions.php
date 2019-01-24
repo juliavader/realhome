@@ -26,9 +26,18 @@ function register_styles() {
     wp_register_style( 'Playfair', 'https://fonts.googleapis.com/css?family=Playfair+Display' );
     wp_enqueue_style( 'Playfair');
 
+
 //    style.css
     wp_enqueue_style( 'style', get_stylesheet_uri() );
 
+    //   Jquery
+    wp_enqueue_script( 'Jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js',   '', '', true);
+
+    //    openstreet map
+    wp_enqueue_script( 'OMS', 'https://api.openstreetmap.org/api/0.6/map?bbox=11.54,48.14,11.543,48.145',  '', '', true);
+
+    //    script.js
+    wp_enqueue_script('script', get_template_directory_uri().'/script.js', '', '', true);
 }
 
 // --- Custom logo
@@ -192,3 +201,78 @@ register_sidebar( array(
     'before_title' => '<h3 class="widget-title">',
     'after_title' => '</h3>',
 ) );
+register_sidebar( array(
+    'name' => 'Actu Sidebar 1',
+    'id' => 'actu-sidebar-1',
+    'description' => 'Appears in the actuality area',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+) );
+register_sidebar( array(
+    'name' => 'Contact Sidebar 1',
+    'id' => 'contact-sidebar-1',
+    'description' => 'Appears in the actuality area',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+) );
+register_sidebar( array(
+    'name' => 'Contact Sidebar 2',
+    'id' => 'contact-sidebar-2',
+    'description' => 'Appears in the actuality area',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+) );
+
+
+
+
+//taxonomy villes
+
+add_action( 'init', 'ville_tax', 0 );
+
+function ville_tax() {
+
+// Labels part for the GUI
+
+    $labels = array(
+        'name' => _x( 'ville', 'taxonomy general name' ),
+        'singular_name' => _x( 'ville', 'taxonomy singular name' ),
+        'search_items' =>  __( 'Search Topics' ),
+        'popular_items' => __( 'Popular Topics' ),
+        'all_items' => __( 'All Topics' ),
+        'parent_item' => null,
+        'parent_item_colon' => null,
+        'edit_item' => __( 'Edit Topic' ),
+        'update_item' => __( 'Update Topic' ),
+        'add_new_item' => __( 'Add New Topic' ),
+        'new_item_name' => __( 'New Topic Name' ),
+        'separate_items_with_commas' => __( 'Separate topics with commas' ),
+        'add_or_remove_items' => __( 'Add or remove topics' ),
+        'choose_from_most_used' => __( 'Choose from the most used topics' ),
+        'menu_name' => __( 'Topics' ),
+        'has_archive' => true,
+    );
+
+// Now register the non-hierarchical taxonomy like tag
+
+    register_taxonomy('ville','propriete',array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'update_count_callback' => '_update_post_term_count',
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'ville' ),
+    ));
+}
+
+
+
+
+

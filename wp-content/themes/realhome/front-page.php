@@ -61,7 +61,7 @@
         while ($propriete_query->have_posts()) : $propriete_query->the_post();  ?>
 
 
-
+            <a href="<?php the_permalink() ;?>" class ="property_link">
                 <div class="card text-center" style="width: 22rem;">
                  <div class="card-img-top">
                      <?php the_post_thumbnail() ;?>
@@ -79,7 +79,7 @@
                         <li class="list-group-item"><?php echo  get_post_meta($post->ID, 'chambres', true) ;?> Chambres</li>
                     </ul>
                 </div>
-
+            </a>
 
 
         <?php endwhile;
@@ -87,7 +87,7 @@
         wp_reset_postdata(); ?>
 
         </div>
-        <a href="#" class="btn btn-property text-light text-uppercase font-weight-bold text-center mt-3 ">Voir Toutes</a>
+        <a href="<?php echo site_url() ;?>/nos-proprietes" class="btn btn-property text-light text-uppercase font-weight-bold text-center mt-3  ">Voir Toutes</a>
     </section>
 
     <section class="agent">
